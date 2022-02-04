@@ -13,6 +13,15 @@ Listed below are changes that have been made in this fork:
 
 `npm install @btielen/pdf-lib-fontkit`
 
+## Usage with pdf-lib
+
+```js
+import { PDFDocument } from 'pdf-lib';
+import * as fontkit from '@btielen/pdf-lib-fontkit';
+
+const pdfDoc = await PDFDocument.create()
+pdfDoc.registerFontkit(fontkit)
+```
 
 # Fontkit
 
