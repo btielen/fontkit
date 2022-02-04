@@ -1,10 +1,8 @@
 {
-  "name": "@pdf-lib/fontkit",
-  "version": "1.1.0",
-  "description": "An advanced font engine for Node and the browser",
-  "main": "dist/fontkit.umd.js",
-  "unpkg": "dist/fontkit.umd.min.js",
-  "module": "dist/fontkit.es.js",
+  "name": "@btielen/pdf-lib-fontkit",
+  "version": "1.0.0",
+  "description": "An font engine for pdf-lib",
+  "main": "dist/fontkit.js",
   "types": "fontkit.d.ts",
   "scripts": {
     "make": "node Makefile.js",
@@ -15,6 +13,9 @@
   "dependencies": {
     "pako": "^1.0.6"
   },
+  "files": [
+    "dist/fontkit.js"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
@@ -56,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Hopding/fontkit.git"
+    "url": "git://github.com/btielen/fontkit.git"
   },
   "keywords": [
     "opentype",
@@ -71,9 +72,6 @@
   "contributors": [
     "Devon Govett <devongovett@gmail.com> (http://badassjs.com/)"
   ],
-  "bugs": {
-    "url": "https://github.com/Hopding/fontkit/issues"
-  },
   "license": "MIT",
-  "homepage": "https://github.com/Hopding/fontkit"
+  "homepage": "https://github.com/btielen/fontkit"
 }

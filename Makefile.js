@@ -13,10 +13,7 @@ const packageJson = require('./package.json');
 target.all = () => {
   target.clean();
   target.generateTrieJson();
-  target.rollupESM();
-  target.rollupESMMin();
-  target.rollupUMD();
-  target.rollupUMDMin();
+  target.rollupCJS();
 };
 
 target.generateTrieJson = () => {
@@ -26,32 +23,11 @@ target.generateTrieJson = () => {
   exec('babel-node src/opentype/shapers/gen-indic.js');
 };
 
-target.rollupESM = () => {
+target.rollupCJS = () => {
   target.generateTrieJson();
   env.UGLIFY = false;
-  env.MODULE_TYPE = 'esm';
-  exec('rollup -c rollup.config.js -o dist/fontkit.es.js');
-};
-
-target.rollupESMMin = () => {
-  target.generateTrieJson();
-  env.UGLIFY = true;
-  env.MODULE_TYPE = 'esm';
-  exec('rollup -c rollup.config.js -o dist/fontkit.es.min.js');
-};
-
-target.rollupUMD = () => {
-  target.generateTrieJson();
-  env.UGLIFY = false;
-  env.MODULE_TYPE = 'umd';
-  exec('rollup -c rollup.config.js -o dist/fontkit.umd.js');
-};
-
-target.rollupUMDMin = () => {
-  target.generateTrieJson();
-  env.UGLIFY = true;
-  env.MODULE_TYPE = 'umd';
-  exec('rollup -c rollup.config.js -o dist/fontkit.umd.min.js');
+  env.MODULE_TYPE = 'cjs';
+  exec('rollup -c rollup.config.js -o dist/fontkit.js');
 };
 
 target.clean = () => {
